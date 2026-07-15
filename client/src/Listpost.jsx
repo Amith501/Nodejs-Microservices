@@ -10,7 +10,7 @@ const Listpost = () => {
 
   const fetchposts = async () => {
     try {
-      const res = await axios.get("http://localhost:4000/posts");
+      const res = await axios.get("http://localhost:4002/posts");
       setposts(res.data);
       console.log(res);
     } catch (error) {
@@ -29,7 +29,7 @@ const Listpost = () => {
       >
         <div className="card-body">
           <h3>{post.title}</h3>
-          <Listcomments postId={post.id}/>
+          <Listcomments comments={post.comments}/>
           <Createcomment postId={post.id}  />
         </div>
       </div>
